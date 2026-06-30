@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Véron Nzola Nzazi — CV</title>
+<style>
+  :root{
+    --navy:#1B2A4A;
+    --navy-light:#243a63;
+    --accent:#2E75B6;
+    --text:#262626;
+    --grey:#595959;
+    --side-text:#E8EEF6;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#e7ebf1;
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:40px 16px 80px;
+  }
+
+  .download-bar{
+    width:100%;
+    max-width:1000px;
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:16px;
+  }
+  .download-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--accent);
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:15px;
+    padding:12px 22px;
+    border-radius:6px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+  .download-btn:hover{
+    background:#235a8f;
+    transform:translateY(-1px);
+  }
+  .download-btn svg{ width:18px; height:18px; fill:#fff; }
+
+  .cv{
+    width:100%;
+    max-width:1000px;
+    background:#fff;
+    box-shadow:0 10px 30px rgba(0,0,0,0.18);
+    display:grid;
+    grid-template-columns:300px 1fr;
+    min-height:1294px; /* approx A4 ratio at this width */
+  }
+
+  /* ---------- SIDEBAR ---------- */
+  .sidebar{
+    background:var(--navy);
+    color:var(--side-text);
+    padding:42px 28px;
+  }
+  .name{
+    font-size:30px;
+    font-weight:bold;
+    line-height:1.2;
+    color:#fff;
+    margin-bottom:24px;
+  }
+  .side-section{ margin-bottom:26px; }
+  .side-title{
+    font-size:14px;
+    letter-spacing:0.5px;
+    font-weight:bold;
+    text-transform:uppercase;
+    color:#fff;
+    border-bottom:1px solid rgba(255,255,255,0.5);
+    padding-bottom:6px;
+    margin-bottom:10px;
+  }
+  .side-section p{
+    margin:0 0 6px;
+    font-size:13.5px;
+    line-height:1.45;
+  }
+  .side-section ul{
+    margin:0 0 8px;
+    padding-left:18px;
+  }
+  .side-section li{
+    font-size:13.5px;
+    line-height:1.5;
+    margin-bottom:4px;
+  }
+  .side-subhead{
+    font-weight:bold;
+    font-size:13.5px;
+    margin:10px 0 4px;
+    color:#fff;
+  }
+  .side-subhead:first-of-type{ margin-top:0; }
+
+  /* ---------- MAIN ---------- */
+  .main{
+    padding:42px 38px;
+  }
+  .job-title{
+    font-size:25px;
+    font-weight:bold;
+    color:var(--navy);
+    margin:0 0 6px;
+  }
+  .job-subtitle{
+    font-size:14.5px;
+    font-style:italic;
+    color:var(--grey);
+    border-bottom:2px solid var(--accent);
+    padding-bottom:14px;
+    margin:0 0 22px;
+  }
+  .section-title{
+    font-size:16px;
+    letter-spacing:0.5px;
+    font-weight:bold;
+    text-transform:uppercase;
+    color:var(--navy);
+    border-bottom:2px solid var(--accent);
+    padding-bottom:6px;
+    margin:24px 0 12px;
+  }
+  .section-title:first-of-type{ margin-top:0; }
+  .profile-text{
+    font-size:14.5px;
+    line-height:1.6;
+    margin:0;
+  }
+  .entry{ margin-bottom:14px; }
+  .entry-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:12px;
+    margin-bottom:2px;
+  }
+  .entry-title{
+    font-size:15.5px;
+    font-weight:bold;
+    color:var(--navy);
+  }
+  .entry-date{
+    font-size:13.5px;
+    font-weight:bold;
+    color:var(--grey);
+    white-space:nowrap;
+  }
+  .entry-sub{
+    font-size:13.5px;
+    font-style:italic;
+    color:var(--accent);
+    margin-bottom:6px;
+  }
+  .entry ul{
+    margin:0;
+    padding-left:18px;
+  }
+  .entry li{
+    font-size:14px;
+    line-height:1.55;
+    margin-bottom:5px;
+  }
+  .entry li::marker{ color:var(--accent); }
+  .declaration{
+    font-size:14px;
+    line-height:1.6;
+    margin:0;
+  }
+
+  @media (max-width:680px){
+    .cv{ grid-template-columns:1fr; }
+    .entry-header{ flex-direction:column; gap:2px; }
+  }
+
+  @media print{
+    body{ background:#fff; padding:0; }
+    .download-bar{ display:none; }
+    .cv{ box-shadow:none; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="download-bar">
+    <a class="download-btn" href="CV_Veron_Nzola_Nzazi.pdf" download>
+      <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+      Télécharger le CV (PDF)
+    </a>
+  </div>
+
+  <div class="cv">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="name">VÉRON<br>NZOLA NZAZI</div>
+
+      <div class="side-section">
+        <div class="side-title">Contact</div>
+        <p>Kinshasa, RD Congo</p>
+        <p>+243 841 153 913</p>
+        <p>nzolaveron80@gmail.com</p>
+        <p>linkedin.com/in/veron-nzola</p>
+        <p>github.com/nzolaveron80-cmyk</p>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">Compétences techniques</div>
+        <div class="side-subhead">Langages</div>
+        <ul>
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>HTML5 / CSS3</li>
+          <li>C</li>
+        </ul>
+        <div class="side-subhead">Frameworks &amp; Outils</div>
+        <ul>
+          <li>Django / Django REST Framework</li>
+          <li>React</li>
+          <li>Bootstrap</li>
+          <li>Git / GitHub</li>
+          <li>VS Code</li>
+        </ul>
+        <div class="side-subhead">Bases de données</div>
+        <ul>
+          <li>PostgreSQL</li>
+          <li>MySQL</li>
+          <li>SQLite</li>
+        </ul>
+        <div class="side-subhead">Conception</div>
+        <ul>
+          <li>APIs RESTful</li>
+          <li>Modélisation UML</li>
+          <li>Architecture logicielle</li>
+        </ul>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">Langues</div>
+        <p>Français — Langue maternelle</p>
+        <p>Lingala — Langue maternelle</p>
+        <p>Anglais — Niveau A1 (notions)</p>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">Qualités</div>
+        <ul>
+          <li>Esprit d'analyse</li>
+          <li>Autonomie</li>
+          <li>Travail en équipe</li>
+          <li>Rigueur</li>
+        </ul>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">Centres d'intérêt</div>
+        <p>Programmation, nouvelles technologies, électronique embarquée, musique</p>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <h1 class="job-title">DÉVELOPPEUR WEB &amp; LOGICIEL JUNIOR</h1>
+      <p class="job-subtitle">Spécialisé en développement web (Python/Django, React) et systèmes embarqués IoT</p>
+
+      <h2 class="section-title">Profil</h2>
+      <p class="profile-text">
+        Développeur web et logiciel junior, titulaire d'une Licence en Sciences Informatiques, avec une solide
+        maîtrise de Python, Django et Django REST Framework, complétée par des compétences en React et en
+        développement d'objets connectés (IoT). Auteur de plusieurs applications complètes : plateforme
+        e-commerce, système de gestion de commandes et systèmes de surveillance IoT pour le secteur agricole.
+        Capable de concevoir une solution de bout en bout, de la base de données à l'interface utilisateur, en
+        passant par les API RESTful. Rigoureux, autonome et orienté résolution de problèmes concrets liés au
+        contexte local.
+      </p>
+
+      <h2 class="section-title">Expérience projets</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">ShopCom — Application de vente en ligne</span>
+          <span class="entry-date">2026</span>
+        </div>
+        <div class="entry-sub">Django · Django REST Framework · HTML/CSS/JS · Bootstrap</div>
+        <ul>
+          <li>Développement d'une application e-commerce intégrant une API RESTful pour la gestion des produits et des commandes.</li>
+          <li>Implémentation du backend avec Django REST Framework et d'une interface utilisateur responsive avec Bootstrap.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">IDC — Application de gestion de commandes de portraits</span>
+          <span class="entry-date">2026</span>
+        </div>
+        <div class="entry-sub">Django · SQLite · HTML/CSS/JS</div>
+        <ul>
+          <li>Création d'une application de gestion de commandes permettant aux clients de commander des portraits personnalisés.</li>
+          <li>Conception d'une base de données SQLite pour le stockage structuré des commandes clients.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Hygiène — Site vitrine e-commerce</span>
+          <span class="entry-date">2026</span>
+        </div>
+        <div class="entry-sub">HTML · CSS · JavaScript · Bootstrap</div>
+        <ul>
+          <li>Réalisation d'un site vitrine mono-produit, responsive et optimisé pour la conversion.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Système KEBA &amp; Agro Sentinel RDC — Projets IoT agricoles</span>
+          <span class="entry-date">2026</span>
+        </div>
+        <div class="entry-sub">Arduino · Capteurs DHT11/LDR · Python · Conception de systèmes embarqués</div>
+        <ul>
+          <li>Conception de systèmes de surveillance environnementale pour le stockage agricole (température, humidité, luminosité, niveau d'eau) à base de capteurs Arduino.</li>
+          <li>Élaboration de schémas de câblage, de code embarqué et de documentation technique destinée à des investisseurs.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">Formation</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Licence en Sciences Informatiques</span>
+          <span class="entry-date">2025 – Présent</span>
+        </div>
+        <div class="entry-sub">Université Protestante au Congo (UPC)</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Diplôme d'État</span>
+          <span class="entry-date">2024 – 2025</span>
+        </div>
+        <div class="entry-sub">Institut Monseigneur Bokeleale</div>
+      </div>
+
+      <h2 class="section-title">Déclaration</h2>
+      <p class="declaration">Je certifie sur l'honneur que les informations fournies ci-dessus sont sincères et vérifiables.</p>
+    </main>
+  </div>
+
+</body>
+</html>
